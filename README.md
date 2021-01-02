@@ -24,12 +24,16 @@ This document contains the following details:
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
-Load balancing ensures that the application will be highly _____, in addition to restricting _____ to the network.
-- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
+Load balancing ensures that the application will be highly **efficient**, in addition to restricting **traffic** to the network.
+- The load balancer helps to maintain the systems availability by ensuring the servers are not overwhelmed with requests.  
+- It uses its off-loading function to defend an organization against distributed denial-of-service (DDoS) attacks.
+The advantage of a Jump Box
+- The jump box serves as a secure gateway to connect to other servers within the network. 
+- It also serves as a origination point for deploying updates on multiple servers. 
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
-- _TODO: What does Filebeat watch for?_
-- _TODO: What does Metricbeat record?_
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the logs and system metrics.
+- Installed as an agent on your servers, **Filebeat** monitors the log files or locations that you specify, collects log events, and forwards them either to Elasticsearch or Logstash for indexing. 
+- **Metricbeat** periodically collects metrics from the OS and services (for instance: system-level CPU usage, memory, file system, disk IO, etc) running on the server. It takes the metrics and it collects and ships them to the output that you specify.
 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
@@ -37,9 +41,9 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 | Name     | Function        | IP Address | Operating System |
 |----------|-----------------|------------|------------------|
 | Jump Box | Gateway         | 10.0.0.4   | Linux            |
-| Web-1    | Application     | 10.0.0.5   | Linux            |
-| Web-2    | Application     | 10.0.0.6   | Linux            |
-| ELK-VM   |                 |            |                  |
+| Web-1    | Server          | 10.0.0.5   | Linux            |
+| Web-2    | Server          | 10.0.0.6   | Linux            |
+| ELK-VM   | Server          | 10.1.0.4   | Linux            |
 
 ### Access Policies
 
