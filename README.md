@@ -7,6 +7,9 @@ The files in this repository were used to configure the network depicted below.
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook (.yml) file may be used to install only certain pieces of it, such as Filebeat.
 
   - [install-elk.yml](https://github.com/rachelamandamartin/Project1/blob/main/Files/install-elk.yml)
+  - [install-filebeat.yml](https://github.com/rachelamandamartin/Project1/blob/main/Files/filebeat.yml.txt)
+  - [install-metricbeat.yml](https://github.com/rachelamandamartin/Project1/blob/main/Files/metricbeat.yml.txt)
+  - [install-DVWA.yml](https://github.com/rachelamandamartin/Project1/blob/main/Files/dvwa.yml.txt)
 
 This document contains the following details:
 - Description of the Topology
