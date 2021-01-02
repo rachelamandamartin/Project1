@@ -27,11 +27,12 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 Load balancing ensures that the application will be highly **efficient**, in addition to restricting **traffic** to the network.
 - The load balancer helps to maintain the systems availability by ensuring the servers are not overwhelmed with requests.  
 - It uses its off-loading function to defend an organization against distributed denial-of-service (DDoS) attacks.
+
 The advantage of a Jump Box
 - The jump box serves as a secure gateway to connect to other servers within the network. 
 - It also serves as a origination point for deploying updates on multiple servers. 
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the logs and system metrics.
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the **logs** and **system metrics**.
 - Installed as an agent on your servers, **Filebeat** monitors the log files or locations that you specify, collects log events, and forwards them either to Elasticsearch or Logstash for indexing. 
 - **Metricbeat** periodically collects metrics from the OS and services (for instance: system-level CPU usage, memory, file system, disk IO, etc) running on the server. It takes the metrics and it collects and ships them to the output that you specify.
 
