@@ -1,8 +1,9 @@
 ## Automated ELK Stack Deployment
+=================================
 
-The files in this repository were used to configure the network depicted below.
+The files in this repository were used to configure the network depicted in the diagram below.
 
-![TODO: Update the path with the name of your diagram](Images/networkdiagramproject1.png)
+![TODO: Update the path with the name of your diagram](Images/networkdiagramproject1These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook (.yml) file may be used to install only certain pieces of it, such as Filebeat.These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook (.yml) file may be used to install only certain pieces of it, such as Filebeat..png)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook (.yml) file may be used to install only certain pieces of it, such as Filebeat.
 
@@ -28,22 +29,23 @@ Load balancing ensures that the application will be highly **reliable**, in addi
 - The load balancer helps to maintain the systems availability by ensuring the servers are not overwhelmed with requests.  
 - It uses its off-loading function to defend an organization against distributed denial-of-service (DDoS) attacks.
 
-The advantage of a Jump Box
+**The advantage of a Jump Box**
 - The jump box serves as a secure gateway to connect to other servers within the network. 
-- It also serves as a origination point for deploying updates on multiple servers. 
+- It also serves as an origin point for deploying updates on multiple servers. 
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the **logs** and **system metrics**.
 - Installed as an agent on your servers, **Filebeat** monitors the log files or locations that you specify, collects log events, and forwards them either to Elasticsearch or Logstash for indexing. 
-- **Metricbeat** periodically collects metrics from the OS and services (for instance: system-level CPU usage, memory, file system, disk IO, etc) running on the server. It takes the metrics and it collects and ships them to the output that you specify.
+- **Metricbeat** periodically collects metrics from the operating system and services running on the server and forwards them to Elasticsearch, Logstash, or to another specified output.
 
 The configuration details of each machine may be found below.
 
-| Name     | Function        | IP Address | Operating System |
-|----------|-----------------|------------|------------------|
-| Jump Box | Gateway         | 10.0.0.4   | Linux            |
-| Web-1    | Server          | 10.0.0.5   | Linux            |
-| Web-2    | Server          | 10.0.0.6   | Linux            |
-| ELK-VM   | Server          | 10.1.0.4   | Linux            |
+| Name       | Function        | IP Address | Operating System |
+|------------|-----------------|------------|------------------|
+| Jump Box   | Gateway         | 10.0.0.4   | Linux            |
+| Web-1      | Server          | 10.0.0.5   | Linux            |
+| Web-2      | Server          | 10.0.0.6   | Linux            |
+| ELK-VM     | Server          | 10.1.0.4   | Linux            |
+
 
 ### Access Policies
 
@@ -57,16 +59,18 @@ Machines within the network can only be accessed by the **Jump Box**.
 
 A summary of the access policies in place can be found in the table below.
 
-| Name     | Publicly Accessible | Allowed IP Addresses                 |
-|----------|---------------------|--------------------------------------|
-| Jump Box | Yes                 | Personal Computer Public IP          |
-| Web-1    | No                  | 10.0.0.4                             |
-| Web-2    | No                  | 10.0.0.4                             |
-| ELK-VM   | No                  | Pesonal Computer Public IP, 10.0.0.4 |
+| Name          | Publicly Accessible | Allowed IP Addresses                 |
+|---------------|---------------------|--------------------------------------|
+| Jump Box      | Yes                 | Personal Computer Public IP          |
+| Web-1         | No                  | 10.0.0.4                             |
+| Web-2         | No                  | 10.0.0.4                             |
+| ELK-VM        | Yes                 | Pesonal Computer Public IP, 10.0.0.4 |
+| Load Balancer | Yes                 | Personal Computer Public IP          |
+
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- system installations and updates can be deployed more easily, and processes become more replicable.
+- System installations and updates can be deployed more easily, and processes become more replicable.
  
 
 The playbook implements the following tasks:
@@ -89,7 +93,8 @@ We have installed the following Beats on these machines:
 - Filebeat & Metricbeat
 
 These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+- **Filebeat**
+- **Metricbeat**
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
@@ -104,4 +109,4 @@ _TODO: Answer the following questions to fill in the blanks:_
 - _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
 - _Which URL do you navigate to in order to check that the ELK server is running?
 
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc. 
