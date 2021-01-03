@@ -57,22 +57,24 @@ Machines within the network can only be accessed by the **Jump Box**.
 
 A summary of the access policies in place can be found in the table below.
 
-| Name     | Publicly Accessible | Allowed IP Addresses          |
-|----------|---------------------|-------------------------------|
-| Jump Box | Yes                 | Personal Computer IP          |
-| Web-1    | No                  | 10.0.0.4                      |
-| Web-2    | No                  | 10.0.0.4                      |
-| ELK-VM   | No                  | Pesonal Computer IP, 10.0.0.4 |
+| Name     | Publicly Accessible | Allowed IP Addresses                 |
+|----------|---------------------|--------------------------------------|
+| Jump Box | Yes                 | Personal Computer Public IP          |
+| Web-1    | No                  | 10.0.0.4                             |
+| Web-2    | No                  | 10.0.0.4                             |
+| ELK-VM   | No                  | Pesonal Computer Public IP, 10.0.0.4 |
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-
-What is the main advantage of automating configuration with Ansible 
+- system installations and updates can be deployed more easily, and processes become more replicable.
+ 
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
+- Install docker.io
+- Install python pip3
+- Install Docker Python Module 
+- Increase virtual memory 
+- Download and launch a docker elk container
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
@@ -80,10 +82,11 @@ The following screenshot displays the result of running `docker ps` after succes
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- _TODO: List the IP addresses of the machines you are monitoring_
+- Web-1: 10.0.0.5
+- Web-2: 10.0.0.6
 
 We have installed the following Beats on these machines:
-- _TODO: Specify which Beats you successfully installed_
+- Filebeat & Metricbeat
 
 These Beats allow us to collect the following information from each machine:
 - _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
