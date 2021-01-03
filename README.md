@@ -103,19 +103,26 @@ These Beats allow us to collect the following information from each machine:
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the filebeat-config.yml file to /etc/ansible/files.
+- Copy the filebeat-config.yml file to /etc/ansible/files directory
 - Update the filebeat-config.yml file to include...
   - At line **#1106** replace the IP address with the IP address of your ELK machine:
     - hosts: ["10.1.0.4:9200"]
     - username: "elastic"
     - password: "changeme"
   - At line **#1806** replace the IP address with the IP address of your ELK machine: 
-    - host: "10.1.0.4:5601"
-- Run the playbook, and navigate to your **ELK machine** to check that the installation worked as expected.
+    - host: "10.1.0.4:5601"  
+- Run the filebeat playbook you created, and navigate to the filebeat installation page on the ELK server GUI to check that the installation worked as expected.
+  - Scroll to Step 5: Module Status on this page and click **Check Data**
+  - If successfully deployed the check box should appear like this: 
+![filebeat module status](Images/filebeatmodulestatus.png)
 
-_TODO: Answer the following questions to fill in the blanks:_
+_Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? Where do you copy it?_
+  - The playbook file is: filebeat.yml 
+  - It should be copied from your Ansible container to your WebVW's in /etc/filebeat
 - _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
+  - In order to make Ansible run the playbook on a specific machine you must update the **hosts** file 
 - _Which URL do you navigate to in order to check that the ELK server is running?
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc. 
+
