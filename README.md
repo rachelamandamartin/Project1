@@ -2,7 +2,7 @@
 
 The files in this repository were used to configure the network depicted below.
 
-![TODO: Update the path with the name of your diagram](Images/diagrammingthenetwork.png)
+![TODO: Update the path with the name of your diagram](Images/networkdiagramproject1.png)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook (.yml) file may be used to install only certain pieces of it, such as Filebeat.
 
@@ -24,7 +24,7 @@ This document contains the following details:
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
-Load balancing ensures that the application will be highly **efficient**, in addition to restricting **traffic** to the network.
+Load balancing ensures that the application will be highly **reliable**, in addition to restricting **traffic** to the network.
 - The load balancer helps to maintain the systems availability by ensuring the servers are not overwhelmed with requests.  
 - It uses its off-loading function to defend an organization against distributed denial-of-service (DDoS) attacks.
 
