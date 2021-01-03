@@ -103,7 +103,8 @@ These Beats allow us to collect the following information from each machine:
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the filebeat-config.yml file to /etc/ansible/files directory
+**For Filebeat:**
+- Copy the filebeat-config.yml file to /etc/ansible/files directory in the anisble container
 - Update the filebeat-config.yml file to include...
   - At line **#1106** replace the IP address with the IP address of your ELK machine:
     - hosts: ["10.1.0.4:9200"]
@@ -115,6 +116,18 @@ SSH into the control node and follow the steps below:
   - Scroll to Step 5: Module Status on this page and click **Check Data**
   - If successfully deployed the check box should appear like this: 
 ![filebeat module status](Images/filebeatmodulestatus.png)
+
+**For Metricbeat:**
+- Copy the metricbeat-config.yml file to /etc/ansible/files directory in the ansible container
+- Update the metricbeat-config.yml file to include...
+  - At line **#62** replace the IP address with the IP address of your ELK machine:
+    - host: "10.1.0.4:5601"
+  - At line **#94** replace the IP address with the IP address of your ELK machine:
+    - hosts: ["10.1.0.4:9200"]
+- Run the metricbeat playbook you created and navigate to the metricbeat installation (docker metrics) page on the ELK server GUI to check that the installation worked as expected.
+  - Scroll to Step 5: Module Status on this page and click **Check Data**
+  - If successfully deployed the check box should appear like this: 
+![metricbeat module status](Images/metricbeatmodulestatus.png)
 
 _Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? Where do you copy it?_
