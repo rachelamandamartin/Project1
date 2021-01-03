@@ -93,15 +93,25 @@ We have installed the following Beats on these machines:
 
 These Beats allow us to collect the following information from each machine:
 - **Filebeat**
+  - **Type of data collected:** Designed to ship log files 
+  - **Example:** For instance, you can track login attempts from unique visitors using filebeat 
 - **Metricbeat**
+  -**Type of data collected:** Designed to ship host metrics 
+  -**Example:** For instance, you can track memory usage using metricbeat
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the _____ file to _____.
-- Update the _____ file to include...
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
+- Copy the filebeat-config.yml file to /etc/ansible/files.
+- Update the filebeat-config.yml file to include...
+  - At line **#1106** replace the IP address with the IP address of your ELK machine:
+    - hosts: ["10.1.0.4:9200"]
+    - username: "elastic"
+    - password: "changeme"
+  - At line **#1806** replace the IP address with the IP address of your ELK machine: 
+    - host: "10.1.0.4:5601"
+- Run the playbook, and navigate to your Elk machine to check that the installation worked as expected.
 
 _TODO: Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? Where do you copy it?_
