@@ -1,4 +1,4 @@
-## :large_blue_circle: Automated ELK Stack Deploymen Ì∞±‚ÄçÌ≤ª
+## :large_blue_circle: Automated ELK Stack Deployment
 
 The files in this repository were used to configure the network depicted in the diagram below. :arrow_down:
 
