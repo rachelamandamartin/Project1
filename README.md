@@ -20,7 +20,7 @@ This document contains the following details:
 - How to Use the Ansible Build
 
 
-### Description of the Topology
+### :large_blue_circle: Description of the Topology
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
@@ -46,7 +46,7 @@ The configuration details of each machine may be found below.
 | ELK-VM     | Server/Monitoring| 10.1.0.4   | Linux            |
 
 
-### Access Policies
+### :large_blue_circle: Access Policies
 
 The machines on the internal network are not exposed to the public Internet. 
 
@@ -66,7 +66,7 @@ A summary of the access policies in place can be found in the table below.
 | ELK-VM        | Yes                 | Pesonal Computer Public IP, 10.0.0.4 |
 | Load Balancer | Yes                 | Personal Computer Public IP          |
 
-### Elk Configuration
+### :large_blue_circle: Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
 - System installations and updates can be deployed more easily, and processes become more replicable.
@@ -83,7 +83,7 @@ The following screenshot displays the result of running `docker ps -a` after suc
 
 ![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker-ps-a.png)
 
-### Target Machines & Beats
+### :large_blue_circle: Target Machines & Beats
 This ELK server is configured to monitor the following machines:
 - Web-1: 10.0.0.5
 - Web-2: 10.0.0.6
@@ -99,7 +99,7 @@ These Beats allow us to collect the following information from each machine:
   - **Type of data collected:** Designed to ship host metrics 
   - **Example:** For instance, you can track memory usage using metricbeat
 
-### Using the Playbook
+### :large_blue_circle: Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
@@ -150,7 +150,7 @@ _Answer the following questions to fill in the blanks:_
   - [filebeat-config.yml](https://github.com/rachelamandamartin/Project1/blob/main/Files/filebeat-config.yml.txt)
   - [metricbeat-config.yml](https://github.com/rachelamandamartin/Project1/blob/main/Files/metricbeat-config.yml.txt)
 
-### Bonus
+### :large_blue_circle: Bonus
 - _Provide the specific commands the user will need to run to download the playbook, update the files, etc._
   - Command to run the playbook:   
     - run: `ansible-playbook filebeat.yml` (/whatever the name of the playbook file you want to run is)
