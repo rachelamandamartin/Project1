@@ -132,13 +132,14 @@ SSH into the control node and follow the steps below:
 
 _Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? Where do you copy it?_
-  - The playbook file is: filebeat.yml 
-  - It should be copied from your Ansible container to your WebVW's in /etc/filebeat
+  - The playbook file is: filebeat.yml and metricbeat.yml
+  - It should be copied from your Ansible container to your WebVW's in /etc/filebeat and /etc/metricbeat
 - _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-  - In order to make Ansible run the playbook on a specific machine you must update the **hosts** file on the ansible container in /etc/ansible directory to include groups labelebed webservers and elk 
+  - In order to make Ansible run the playbook on a specific machine you must update the **hosts** file on the ansible container in the /etc/ansible directory to include groups labeled webservers and elk 
     - The webservers group includes Web-1 and Web-2, and the elk group includes the ELK-VM
     - When you are creating the playbook be sure to specify at the top of the playbook which hosts you would like the playbook to be executed on 
-    - If you want to execute the playbook on the Webservers (Web-1 & 2) your playbook should include "hosts: webservers", while if you want to execute the playbook on the ELK-VM your playbook file should include "hosts: elk" 
+    - If you want to execute the playbook on the Webservers (Web-1 & 2) your playbook should include "hosts: webservers", while if you want to execute the playbook on the ELK-VM your playbook file should include "hosts: elk"
+    - More specifically the ELK server was installed on the elk hosts, and filebeat was installed on the webservers hosts 
 - _Which URL do you navigate to in order to check that the ELK server is running? 
   - To ensure the ELK server is running navigate to http://137.117.41.225:5601/app/kibana 
   - Note: the IP address used in this link is the ELK-VM public IP 
