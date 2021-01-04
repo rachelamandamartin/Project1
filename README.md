@@ -1,4 +1,4 @@
-## :large_blue_circle: Automated ELK Stack Deployment
+## :large_blue_circle: Automated ELK Stack Deploymen Ì∞±‚ÄçÌ≤ª
 
 The files in this repository were used to configure the network depicted in the diagram below. :arrow_down:
 
@@ -141,9 +141,9 @@ _Answer the following questions to fill in the blanks:_
     - When you are creating the playbook be sure to specify at the top of the playbook which hosts you would like the playbook to be executed on 
     - If you want to execute the playbook on the Webservers (Web-1 & 2) your playbook should include "hosts: webservers", while if you want to execute the playbook on the ELK-VM your playbook file should include "hosts: elk"
     - More specifically the ELK server was installed on the elk hosts, while filebeat and metricbeat were installed on the webservers hosts 
-- _Which URL do you navigate to in order to check that the ELK server is running? 
+- _Which URL do you navigate to in order to check that the ELK server is running?_ 
   - To ensure the ELK server is running navigate to http://137.117.41.225:5601/app/kibana 
-  - Note: the IP address used in this link is the ELK-VM public IP 
+    - Note: the IP address used in this link is the ELK-VM public IP 
 
 **Files Mentioned that were not Previously Listed**
   - [hosts](https://github.com/rachelamandamartin/Project1/blob/main/Files/hosts.txt)
