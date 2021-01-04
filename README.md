@@ -2,7 +2,7 @@
 
 The files in this repository were used to configure the network depicted in the diagram below.
 
-![TODO: Update the path with the name of your diagram](Images/networkdiagram.png)
+![TODO: Update the path with the name of your diagram](Images/networkdiagramproject1.png)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook (.yml) file may be used to install only certain pieces of it, such as Filebeat.
 
@@ -32,18 +32,18 @@ The advantage of a Jump Box
 - The jump box serves as a secure gateway to connect to other servers within the network. 
 - It also serves as an origin point for deploying updates on multiple servers. 
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the **logs** and **system metrics**.
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the **system logs** and **system metrics**.
 - Installed as an agent on your servers, **Filebeat** monitors the log files, collects log events, and forwards them either to Elasticsearch or Logstash for indexing. 
 - **Metricbeat** periodically collects metrics from the operating system and services running on the server and forwards them to Elasticsearch, Logstash, or to another specified output.
 
 The configuration details of each machine may be found below.
 
-| Name       | Function        | IP Address | Operating System |
-|------------|-----------------|------------|------------------|
-| Jump Box   | Gateway         | 10.0.0.4   | Linux            |
-| Web-1      | Server          | 10.0.0.5   | Linux            |
-| Web-2      | Server          | 10.0.0.6   | Linux            |
-| ELK-VM     | Server          | 10.1.0.4   | Linux            |
+| Name       | Function         | IP Address | Operating System |
+|------------|------------------|------------|------------------|
+| Jump Box   | Gateway          | 10.0.0.4   | Linux            |
+| Web-1      | Server           | 10.0.0.5   | Linux            |
+| Web-2      | Server           | 10.0.0.6   | Linux            |
+| ELK-VM     | Server/Monitoring| 10.1.0.4   | Linux            |
 
 
 ### Access Policies
@@ -51,10 +51,10 @@ The configuration details of each machine may be found below.
 The machines on the internal network are not exposed to the public Internet. 
 
 Only the **Jump Box** machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- Personal Computer Public IP
+- Personal Computer Public IP (whitelisted IP address)
 
-Machines within the network can only be accessed by the **Jump Box**.
-- Jump Box Private IP: 10.0.0.4
+Machines within the network can only be accessed by the **Jump Box** machine.
+- Jump Box Private IP: 10.0.0.4 (allowed access to the ELM-VM)
 
 A summary of the access policies in place can be found in the table below.
 
@@ -145,7 +145,7 @@ _Answer the following questions to fill in the blanks:_
   - To ensure the ELK server is running navigate to http://137.117.41.225:5601/app/kibana 
   - Note: the IP address used in this link is the ELK-VM public IP 
 
-**Files Mentioned that Were not Previously Listed**
+**Files Mentioned that were not Previously Listed**
   - [hosts](https://github.com/rachelamandamartin/Project1/blob/main/Files/hosts.txt)
   - [filebeat-config.yml](https://github.com/rachelamandamartin/Project1/blob/main/Files/filebeat-config.yml.txt)
   - [metricbeat-config.yml](https://github.com/rachelamandamartin/Project1/blob/main/Files/metricbeat-config.yml.txt)
@@ -153,5 +153,7 @@ _Answer the following questions to fill in the blanks:_
 ### Bonus
 - _Provide the specific commands the user will need to run to download the playbook, update the files, etc._
   - Command to run the playbook:   
-    - run `ansible-playbook filebeat.yml` (/whatever the name of the playbook file you want to run is)
+    - run: `ansible-playbook filebeat.yml` (/whatever the name of the playbook file you want to run is)
     - Note: to run the playbook you must be in the directory where the playbook file is stored, or you must specify the path to the playbook in the command 
+  - Command to update the files:
+    - run: `apt-get update` (within the /etc/ansible/ directory in the ansible container) 
