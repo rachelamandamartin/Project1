@@ -79,7 +79,7 @@ The playbook implements the following tasks:
 - Increase virtual memory 
 - Download and launch a docker elk container
 
-The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
+The following screenshot displays the result of running `docker ps -a` after successfully configuring the ELK instance.
 
 ![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker-ps-a.png)
 
@@ -108,9 +108,9 @@ SSH into the control node and follow the steps below:
 - Copy the filebeat-config.yml file to /etc/ansible/files directory in the anisble container
 - Update the filebeat-config.yml file to include...
   - At line **#1106** replace the IP address with the IP address of your ELK machine:
-    - hosts: ["10.1.0.4:9200"]
-    - username: "elastic"
-    - password: "changeme"
+    - `hosts: ["10.1.0.4:9200"]`
+    - `username: "elastic"`
+    - `password: "changeme"`
   - At line **#1806** replace the IP address with the IP address of your ELK machine: 
     - host: "10.1.0.4:5601"  
 - Run the filebeat playbook you created, and navigate to the filebeat installation page on the ELK server GUI to check that the installation worked as expected.
@@ -122,9 +122,9 @@ SSH into the control node and follow the steps below:
 - Copy the metricbeat-config.yml file to /etc/ansible/files directory in the ansible container
 - Update the metricbeat-config.yml file to include...
   - At line **#62** replace the IP address with the IP address of your ELK machine:
-    - host: "10.1.0.4:5601"
+    - `host: "10.1.0.4:5601"`
   - At line **#96** replace the IP address with the IP address of your ELK machine:
-    - hosts: ["10.1.0.4:9200"]
+    - `hosts: ["10.1.0.4:9200"]`
 - Run the metricbeat playbook you created and navigate to the metricbeat installation (docker metrics) page on the ELK server GUI to check that the installation worked as expected.
   - Scroll to Step 5: Module Status on this page and click **Check Data**
   - If successfully deployed the check box should appear like this: 
@@ -151,4 +151,7 @@ _Answer the following questions to fill in the blanks:_
   - [metricbeat-config.yml](https://github.com/rachelamandamartin/Project1/blob/main/Files/metricbeat-config.yml.txt)
 
 ### Bonus
-
+- _Provide the specific commands the user will need to run to download the playbook, update the files, etc._
+  - Command to run the playbook:   
+    - run `ansible-playbook filebeat.yml` (/whatever the name of the playbook file you want to run is)
+    - Note: to run the playbook you must be in the directory where the playbook file is stored, or you must specify the path to the playbook in the command 
