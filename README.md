@@ -1,6 +1,6 @@
-## Automated ELK Stack Deployment
+## :large_blue_circle: Automated ELK Stack Deployment
 
-The files in this repository were used to configure the network depicted in the diagram below.
+The files in this repository were used to configure the network depicted in the diagram below. :arrow_down:
 
 ![TODO: Update the path with the name of your diagram](Images/networkdiagramproject1.png)
 
@@ -112,7 +112,7 @@ SSH into the control node and follow the steps below:
     - `username: "elastic"`
     - `password: "changeme"`
   - At line **#1806** replace the IP address with the IP address of your ELK machine: 
-    - host: "10.1.0.4:5601"  
+    - `host: "10.1.0.4:5601"`  
 - Run the filebeat playbook you created, and navigate to the filebeat installation page on the ELK server GUI to check that the installation worked as expected.
   - Scroll to Step 5: Module Status on this page and click **Check Data**
   - If successfully deployed the check box should appear like this: 
