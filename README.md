@@ -132,13 +132,20 @@ SSH into the control node and follow the steps below:
 
 _Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? Where do you copy it?_
-  - The playbook file is: filebeat.yml, metricbeat.yml, install-elk.yml, and dvwa.yml
+  - The playbook files are filebeat.yml, metricbeat.yml, install-elk.yml, and dvwa.yml
     - Playbook files should all be within the /etc/ansible directory in the ansible container
     - It should also be noted that the configuration files for filebeat (filebeat-config.yml) and metricbeat (metricbeat-config.yml) should be copied onto the Web VM's in /etc/filebeat (for filebeat) and /etc/metricbeat (for metricbeat) 
 - _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
   - In order to make Ansible run the playbook on a specific machine you must update the **hosts** file on the ansible container in the /etc/ansible directory to include groups labeled webservers and elk 
-    - The webservers group includes Web-1 and Web-2, and the elk group includes the ELK-VM
-    - When you are creating the playbook be sure to specify at the top of the playbook which hosts you would like the playbook to be executed on 
+    - The webservers group includes Web-1 and Web-2 private IP's as well as the specified interpreter (python3), and the elk group includes the ELK-VM private IP and specified interpreter (python3).
+    - They are listed in the hosts file like this: 
+      - `[webservers]`
+        `10.0.0.5 ansible_python_interpreter=/usr/bin/python3`
+        `10.0.0.6 ansible_python_interpreter=/usr/bin/python3`
+      
+        `[elk]`
+        `10.1.0.4 ansible_python_interpreter=/usr/bin/python3`
+    - When you are creating the playbook be sure to specify at the top of the playbook which group you would like the playbook to be executed on 
     - If you want to execute the playbook on the Webservers (Web-1 & 2) your playbook should include "hosts: webservers", while if you want to execute the playbook on the ELK-VM your playbook file should include "hosts: elk"
     - More specifically the ELK server was installed on the elk hosts, while filebeat and metricbeat were installed on the webservers hosts 
 - _Which URL do you navigate to in order to check that the ELK server is running?_ 
