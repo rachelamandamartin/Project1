@@ -114,8 +114,12 @@ SSH into the control node and follow the steps below:
   - At line **#1806** replace the IP address with the IP address of your ELK machine: 
     - `host: "10.1.0.4:5601"`  
 - Run the filebeat playbook you created, and navigate to the filebeat installation page on the ELK server GUI to check that the installation worked as expected.
-  - Scroll to Step 5: Module Status on this page and click **Check Data**
-  - If successfully deployed the check box should appear like this: 
+  - More specifically, from the Kibana home page click: 
+    - 'Add Log Data' 
+    - 'System Logs'
+    - Then click on the 'DEB' tab under 'Getting Started'
+    - Scroll to Step 5: Module Status and click **Check Data**
+    - If successfully deployed the check box should appear like this: 
 ![filebeat module status](Images/filebeatmodulestatus.png)
 
 **For Metricbeat:**
@@ -126,8 +130,12 @@ SSH into the control node and follow the steps below:
   - At line **#96** replace the IP address with the IP address of your ELK machine:
     - `hosts: ["10.1.0.4:9200"]`
 - Run the metricbeat playbook you created and navigate to the metricbeat installation (docker metrics) page on the ELK server GUI to check that the installation worked as expected.
-  - Scroll to Step 5: Module Status on this page and click **Check Data**
-  - If successfully deployed the check box should appear like this: 
+  - More specifically, from the Kibana home page click:
+    - 'Add Metric Data'
+    - 'Docker Metrics'
+    - Then click the 'DEB' tab under 'Getting Started'
+    - Scroll to Step 5: Module Status on this page and click **Check Data**
+    - If successfully deployed the check box should appear like this: 
 ![metricbeat module status](Images/metricbeatmodulestatus.png)
 
 _Answer the following questions to fill in the blanks:_
@@ -138,7 +146,7 @@ _Answer the following questions to fill in the blanks:_
 - _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
   - In order to make Ansible run the playbook on a specific machine you must update the **hosts** file on the ansible container in the /etc/ansible directory to include groups labeled webservers and elk 
     - The webservers group includes Web-1 and Web-2 private IP's as well as the specified interpreter (python3), and the elk group includes the ELK-VM private IP and specified interpreter (python3).
-    - They are listed in the hosts file like this: 
+    - The groups are listed in the host file as follows: 
       - `[webservers]`
       - `10.0.0.5 ansible_python_interpreter=/usr/bin/python3`
       - `10.0.0.6 ansible_python_interpreter=/usr/bin/python3`
