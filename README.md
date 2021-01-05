@@ -153,9 +153,9 @@ _Answer the following questions to fill in the blanks:_
       
       - `[elk]`
       - `10.1.0.4 ansible_python_interpreter=/usr/bin/python3`
-    - When you are creating the playbook be sure to specify at the top of the playbook which group you would like the playbook to be executed on 
+    - When you are creating the playbook be sure to specify at the top of the playbook file which group you would like the playbook to be executed on 
     - If you want to execute the playbook on the Webservers (Web-1 & 2) your playbook should include "hosts: webservers", while if you want to execute the playbook on the ELK-VM your playbook file should include "hosts: elk"
-    - More specifically the ELK server was installed on the elk hosts, while filebeat and metricbeat were installed on the webservers hosts 
+    - The ELK server was installed on the elk hosts, while filebeat and metricbeat were installed on the webservers hosts 
 - _Which URL do you navigate to in order to check that the ELK server is running?_ 
   - To ensure the ELK server is running navigate to http://137.117.41.225:5601/app/kibana 
     - Note: the IP address used in this link is the ELK-VM public IP
@@ -163,7 +163,7 @@ _Answer the following questions to fill in the blanks:_
     - If successfully deployed the page should appear like this: 
 ![kibana home page](Images/kibanahome.png) 
    
-**Files Mentioned that were not Previously Listed**
+**Files Mentioned That Were Not Previously Listed**
   - [hosts](https://github.com/rachelamandamartin/Project1/blob/main/Files/hosts.txt)
   - [filebeat-config.yml](https://github.com/rachelamandamartin/Project1/blob/main/Files/filebeat-config.yml.txt)
   - [metricbeat-config.yml](https://github.com/rachelamandamartin/Project1/blob/main/Files/metricbeat-config.yml.txt)
