@@ -140,11 +140,11 @@ _Answer the following questions to fill in the blanks:_
     - The webservers group includes Web-1 and Web-2 private IP's as well as the specified interpreter (python3), and the elk group includes the ELK-VM private IP and specified interpreter (python3).
     - They are listed in the hosts file like this: 
       - `[webservers]`
-        `10.0.0.5 ansible_python_interpreter=/usr/bin/python3`
-        `10.0.0.6 ansible_python_interpreter=/usr/bin/python3`
+      - `10.0.0.5 ansible_python_interpreter=/usr/bin/python3`
+      - `10.0.0.6 ansible_python_interpreter=/usr/bin/python3`
       
-        `[elk]`
-        `10.1.0.4 ansible_python_interpreter=/usr/bin/python3`
+      - `[elk]`
+      - `10.1.0.4 ansible_python_interpreter=/usr/bin/python3`
     - When you are creating the playbook be sure to specify at the top of the playbook which group you would like the playbook to be executed on 
     - If you want to execute the playbook on the Webservers (Web-1 & 2) your playbook should include "hosts: webservers", while if you want to execute the playbook on the ELK-VM your playbook file should include "hosts: elk"
     - More specifically the ELK server was installed on the elk hosts, while filebeat and metricbeat were installed on the webservers hosts 
