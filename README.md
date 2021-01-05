@@ -160,7 +160,7 @@ _Answer the following questions to fill in the blanks:_
 ### :large_blue_circle: Bonus
 - _Provide the specific commands the user will need to run to download the playbook, update the files, etc._
   - Command to run the playbook:   
-    - run: `ansible-playbook filebeat.yml` (/whatever the name of the playbook file you want to run is)
+    - run: `ansible-playbook ./filebeat.yml` (/whatever the name of the playbook file you want to run is)
     - Note: to run the playbook you must be in the directory where the playbook file is stored, or you must specify the path to the playbook in the command 
   - Command to update the files:
     - run: `apt-get update` (within the /etc/ansible/ directory in the ansible container) 
