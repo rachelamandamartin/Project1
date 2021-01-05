@@ -159,7 +159,7 @@ _Answer the following questions to fill in the blanks:_
 - _Which URL do you navigate to in order to check that the ELK server is running?_ 
   - To ensure the ELK server is running navigate to http://137.117.41.225:5601/app/kibana 
     - Note: the IP address used in this link is the ELK-VM public IP
-    - If the server is running correctly the link will load the Kibana GUI, if it is not configured correctly the page will not load the Kibana GUI
+    - If the server is running correctly the link will load the Kibana GUI, if it is not configured correctly the page will not load
     - If successfully deployed the page should appear like this: 
 ![kibana home page](Images/kibanahome.png) 
    
