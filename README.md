@@ -161,7 +161,7 @@ _Answer the following questions to fill in the blanks:_
     - Note: the IP address used in this link is the ELK-VM public IP
     - If the server is running correctly the link will load the Kibana GUI, if it is not configured correctly the page will not load the Kibana GUI
     - If successfully deployed the page should appear like this: 
-![kibana home page](Images/kibanahomepage.png) 
+![kibana home page](Images/kibanahome.png) 
    
 **Files Mentioned that were not Previously Listed**
   - [hosts](https://github.com/rachelamandamartin/Project1/blob/main/Files/hosts.txt)
