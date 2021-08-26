@@ -54,7 +54,7 @@ Only the **Jump Box** machine can accept connections from the Internet. Access t
 - Personal Computer Public IP (whitelisted IP address)
 
 Machines within the network can only be accessed by the **Jump Box** machine.
-- Jump Box Private IP: 10.0.0.4 (allowed access to the ELM-VM)
+- Jump Box Private IP: 10.0.0.4 (allowed access to the ELK-VM)
 
 A summary of the access policies in place can be found in the table below.
 
