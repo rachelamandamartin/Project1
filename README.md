@@ -66,7 +66,7 @@ A summary of the access policies in place can be found in the table below.
 | ELK-VM        | Yes                 | Pesonal Computer Public IP, 10.0.0.4 |
 | Load Balancer | Yes                 | Personal Computer Public IP          |
 
-### :large_blue_circle: Elk Configuration
+### :large_blue_circle: ELK Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
 - System installations and updates can be deployed more easily, and processes become more replicable.
@@ -77,7 +77,7 @@ The playbook implements the following tasks:
 - Install python pip3
 - Install Docker Python Module 
 - Increase virtual memory 
-- Download and launch a docker elk container
+- Download and launch a docker ELK container
 
 The following screenshot displays the result of running `docker ps -a` after successfully configuring the ELK instance.
 
@@ -144,18 +144,18 @@ _Answer the following questions to fill in the blanks:_
     - Playbook files should all be within the /etc/ansible directory in the ansible container
     - It should also be noted that the configuration files for filebeat (filebeat-config.yml) and metricbeat (metricbeat-config.yml) should be copied onto the Web VM's in /etc/filebeat (for filebeat) and /etc/metricbeat (for metricbeat) 
 - _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-  - In order to make Ansible run the playbook on a specific machine you must update the **hosts** file on the ansible container in the /etc/ansible directory to include groups labeled webservers and elk 
-    - The webservers group includes Web-1 and Web-2 private IP's as well as the specified interpreter (python3), and the elk group includes the ELK-VM private IP and specified interpreter (python3).
+  - In order to make Ansible run the playbook on a specific machine you must update the **hosts** file on the ansible container in the /etc/ansible directory to include groups labeled webservers and ELK 
+    - The webservers group includes Web-1 and Web-2 private IP's as well as the specified interpreter (python3), and the ELK group includes the ELK-VM private IP and specified interpreter (python3).
     - The groups are listed in the host file as follows: 
       - `[webservers]`
       - `10.0.0.5 ansible_python_interpreter=/usr/bin/python3`
       - `10.0.0.6 ansible_python_interpreter=/usr/bin/python3`
       
-      - `[elk]`
+      - `[ELK]`
       - `10.1.0.4 ansible_python_interpreter=/usr/bin/python3`
     - When you are creating the playbook be sure to specify at the top of the playbook file which group you would like the playbook to be executed on 
-    - If you want to execute the playbook on the Webservers (Web-1 & 2) your playbook should include "hosts: webservers", while if you want to execute the playbook on the ELK-VM your playbook file should include "hosts: elk"
-    - The ELK server was installed on the elk hosts, while filebeat and metricbeat were installed on the webservers hosts 
+    - If you want to execute the playbook on the Webservers (Web-1 & 2) your playbook should include "hosts: webservers", while if you want to execute the playbook on the ELK-VM your playbook file should include "hosts: ELK"
+    - The ELK server was installed on the ELK hosts, while filebeat and metricbeat were installed on the webservers hosts 
 - _Which URL do you navigate to in order to check that the ELK server is running?_ 
   - To ensure the ELK server is running navigate to http://137.117.41.225:5601/app/kibana 
     - Note: the IP address used in this link is the ELK-VM public IP
